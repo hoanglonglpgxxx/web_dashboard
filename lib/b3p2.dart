@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class MyApp extends StatefulWidget {
+class MyApp3P2 extends StatefulWidget {
   //Statefulwidget has internal state
   //each StatefulWidget has 2 class
   //* a public class, that extends StatefulWidget
@@ -17,19 +17,26 @@ class MyApp extends StatefulWidget {
   }
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp3P2> {
   int index = 3;
   bool _isVisible = false;
   final controllers = <TextEditingController>[];
   final List<int> data = [0, 0, 0];
+  final List<bool> isValid = [false, false, false];
   int _max = 0;
   void _findMax() {
     setState(() {
-      _max = data[0];
-      _isVisible = true;
-      data.forEach((e) {
-        if (_max < e) {
-          _max = e;
+      controllers.asMap().forEach((i, e) {
+        if (e.text.isEmpty) {
+          print(e);
+        } else {
+          _max = data[0];
+          _isVisible = true;
+          data.forEach((e) {
+            if (_max < e) {
+              _max = e;
+            }
+          });
         }
       });
     });
@@ -50,6 +57,9 @@ class _MyAppState extends State<MyApp> {
                   itemCount: index,
                   itemBuilder: (BuildContext context, int i) {
                     final controller = TextEditingController();
+                    if (controllers.length < 3) {
+                      controllers.add(controller);
+                    }
                     return Container(
                       margin:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -61,6 +71,7 @@ class _MyAppState extends State<MyApp> {
                         ],
                         onChanged: (val) {
                           data[i] = int.parse(val);
+                          isValid[i] = true;
                         },
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
