@@ -38,7 +38,7 @@ class MyApp2 extends StatefulWidget {
   String name = '';
   int age = 0;
 
-  MyApp2({required this.name, required this.age});
+  MyApp2({super.key, required this.name, required this.age});
   @override
   State<StatefulWidget> createState() {
     return _MyApp2State();
@@ -62,7 +62,7 @@ class _MyApp2State extends State<MyApp2> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: TextField(
                 //get val from textField
                 controller: ageEditingController,
@@ -77,14 +77,14 @@ class _MyApp2State extends State<MyApp2> {
                     //state changed => build() -> rerun -> reload widget
                   });
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     labelText: 'enter age'),
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: TextField(
                 //get val from textField
                 controller: numberEditingController,
@@ -100,7 +100,7 @@ class _MyApp2State extends State<MyApp2> {
                     //state changed => build() -> rerun -> reload widget
                   });
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     labelText: 'nhập số nguyên'),
@@ -110,8 +110,8 @@ class _MyApp2State extends State<MyApp2> {
               visible: _isVisible,
               child: Text(
                 _age <= 100
-                    ? 'Tuổi hiện tại: ${_age} còn ${100 - _age} năm tới 100 tuổi'
-                    : 'Tuổi nhập vào ${_age}, vượt quá 100',
+                    ? 'Tuổi hiện tại: $_age còn ${100 - _age} năm tới 100 tuổi'
+                    : 'Tuổi nhập vào $_age, vượt quá 100',
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,

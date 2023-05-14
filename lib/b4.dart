@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class MyApp4 extends StatelessWidget {
+  const MyApp4({super.key});
+
   //Statefulwidget has internal state
   //each StatefulWidget has 2 class
   //* a public class, that extends StatefulWidget
@@ -16,7 +17,7 @@ class MyApp4 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-            child: Container(decoration: BoxDecoration(), child: MultiTable())),
+            child: Container(decoration: const BoxDecoration(), child: MultiTable())),
       ),
     );
   }
@@ -66,27 +67,28 @@ class MyApp4 extends StatelessWidget {
 } */
 class MultiTable extends StatelessWidget {
   int index = 10;
+
+  MultiTable({super.key});
   @override
   Widget build(BuildContext context) {
     List<Widget> table = [];
     for (int i = 1; i < index; i++) {
       for (int j = 1; j < index; j++) {
-        table.add(Container(
+        table.add(SizedBox(
           height: 200.0,
           child: ListView.builder(
               shrinkWrap: true,
               itemCount: index,
               itemBuilder: (BuildContext context, int i) {
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Text('${i} * ${j} = ${i * j}'),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Text('$i * $j = ${i * j}'),
                 );
               }),
         ));
       }
     }
 
-    ;
     return MaterialApp(
       title: 'statefulWidget',
       home: Scaffold(

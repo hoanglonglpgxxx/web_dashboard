@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   //Statefulwidget has internal state
   //each StatefulWidget has 2 class
   //* a public class, that extends StatefulWidget
@@ -27,11 +29,11 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _max = data[0];
       _isVisible = true;
-      data.forEach((e) {
+      for (var e in data) {
         if (_max < e) {
           _max = e;
         }
-      });
+      }
     });
   }
 
@@ -52,7 +54,7 @@ class _MyAppState extends State<MyApp> {
                     final controller = TextEditingController();
                     return Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       child: TextField(
                         controller: controller,
                         keyboardType: TextInputType.number,
@@ -63,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                           data[i] = int.parse(val);
                         },
                         decoration: InputDecoration(
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(20))),
                             labelText: 'Nhập số thứ  ${i + 1}'),
@@ -74,7 +76,7 @@ class _MyAppState extends State<MyApp> {
                 visible: _isVisible,
                 child: Text(
                   'max val: $_max',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.red,
@@ -82,7 +84,7 @@ class _MyAppState extends State<MyApp> {
                   textDirection: TextDirection.ltr,
                 ),
               ),
-              FloatingActionButton(onPressed: _findMax, child: Text('output')),
+              FloatingActionButton(onPressed: _findMax, child: const Text('output')),
             ],
           ),
         ),
