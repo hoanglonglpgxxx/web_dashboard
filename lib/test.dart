@@ -24,46 +24,49 @@ class MyApp4 extends StatelessWidget {
   }
 }
 
-class MultiTable extends StatelessWidget {
-  int index = 9;
+/* class MultiTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    List<Widget> table = [];
+    List<Widget> res = [];
 
-    for (var i = 1; i <= index; i++) {
+    for (var i = 1; i <= 9; i++) {
       List<Widget> row = [];
-      for (var k = 1; k <= index; k++) {
-        row.add(Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Container(
+      for (var k = 1; k <= i; k++) {
+        row.add(Container(
+          child: SizedBox(
             child: Text(
-              '$i * $k = ${i * k} ',
+              '$k * $i = ${i * k} ',
               style: TextStyle(fontSize: 20),
             ),
           ),
+          decoration: BoxDecoration(border: Border.all(color: Colors.green)),
         ));
 
         //row.add(Text(
         //'$k * $i = ${i * k} ',
         //style: TextStyle(fontSize: 8),
         //));
+
+        row.add(SizedBox(
+          width: 10,
+        ));
       }
 
-      table.add(Column(children: row));
+      res.add(Row(children: row));
+      res.add(SizedBox(
+        height: 20,
+      ));
     }
 
-    return Container(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: table,
-          ),
-        ]));
+    return Padding(
+      padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
+      child: Column(
+        children: res,
+      ),
+    );
   }
-} 
-/* class MultiTable extends StatelessWidget {
+} */
+class MultiTable extends StatelessWidget {
   int index = 10;
 
   MultiTable({super.key});
@@ -71,18 +74,20 @@ class MultiTable extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> table = [];
     for (int i = 1; i < index; i++) {
-      List<Widget> row = [];
-
-      for (int j = 1; j <= i; j++) {
-        row.add(Container(
-            child: Container(
-          child: Text('$i * $j = ${i * j}'),
-        )));
+      for (int j = 1; j < index; j++) {
+        table.add(Table(
+          children: [
+            TableRow(children: [
+              Container(
+                child: Text('$i * $j = ${i * j}'),
+              )
+            ])
+          ],
+        ));
       }
-      table.add(Column(children: row));
     }
 
-    /* return MaterialApp(
+    return MaterialApp(
       title: 'statefulWidget',
       home: Scaffold(
         body: Center(
@@ -92,13 +97,6 @@ class MultiTable extends StatelessWidget {
           ),
         ),
       ),
-    ); */
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 10, 0, 0),
-      child: Column(
-        children: table,
-      ),
     );
   }
 }
- */
