@@ -29,6 +29,7 @@ class _MyAppState extends State<MyApp3P2> {
       controllers.asMap().forEach((i, e) {
         if (e.text.isEmpty) {
           print(e);
+          print('e');
         } else {
           _max = data[0];
           _isVisible = true;
