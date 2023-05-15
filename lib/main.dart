@@ -45,11 +45,12 @@ class MyCustomForm extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 import 'b4.dart';
+import 'b5.dart';
 
 void main() {
   /* runApp(MyApp2(
           name: 'asd', age: 20) //send argu/params to this by using constructor
       ); */
-  runApp(const MyApp4() //send argu/params to this by using constructor
+  runApp(const sumFunc() //send argu/params to this by using constructor
       );
 }
