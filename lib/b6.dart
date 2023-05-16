@@ -22,6 +22,7 @@ class _findMinChar extends State<minChar> {
         home: Scaffold(
           body: Center(
               child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('Find min character'),
               Container(
@@ -53,6 +54,13 @@ class _findMinChar extends State<minChar> {
                       return _theChar;
                     } */
                   },
+                  /* onChanged: (text) {
+                    if (text.length == 0) {
+                      setState(() {
+                        
+                      });
+                    }
+                  }, */
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20))),
