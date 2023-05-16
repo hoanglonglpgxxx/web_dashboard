@@ -13,6 +13,7 @@ class isOdd extends StatefulWidget {
 class _findisOdd extends State<isOdd> {
   int _input = 0;
   int _oddChar = 0;
+  bool _isVisible = false;
   final numberEditingController = TextEditingController();
 
   @override
@@ -53,30 +54,35 @@ class _findisOdd extends State<isOdd> {
                         }
                       }); */
                       _input = int.parse(text);
+                      _isVisible = true;
                       numberEditingController.clear();
                     });
                   },
-                  /* onChanged: (text) {
+                  onChanged: (text) {
                     if (text.length == 0) {
                       setState(() {
-                        
+                        _isVisible = false;
                       });
                     }
-                  }, */
+                  },
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       labelText: 'Enter number:'),
                 ),
               ),
-              Text(
-                'Số nguyên dương $_input ${_oddChar == 1 ? 'có số chẵn' : 'tất cả chữ số là số lẻ'}',
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red,
+              Visibility(
+                visible: _isVisible,
+                child: Text(
+                  'Số nguyên dương $_input ${_oddChar == 1 ? 'có số chẵn' : 'có tất cả chữ số là số lẻ'}',
+                  style: const TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
                 ),
-              ),
+              )
+
               /*  FloatingActionButton(
                 onPressed: _findChar,
                 child: const Text(
@@ -89,3 +95,12 @@ class _findisOdd extends State<isOdd> {
         ));
   }
 }
+//catch exception when input is invalid????
+
+//phần CRUD nên dùng card kiểu này để wrapp
+//https://www.youtube.com/watch?v=xbiFBzmsAic&list=PLWBrqglnjNl0OAOe0p2fXrM0xnOr3HcXp&index=15
+
+//lambda = anony func
+/**
+ * Function VarName = params {method body}
+ */
