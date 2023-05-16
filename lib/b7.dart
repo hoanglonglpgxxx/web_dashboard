@@ -2,19 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class minChar extends StatefulWidget {
-  const minChar({super.key});
+class isOdd extends StatefulWidget {
+  const isOdd({super.key});
   @override
   State<StatefulWidget> createState() {
-    return _findMinChar();
+    return _findisOdd();
   }
 }
 
-class _findMinChar extends State<minChar> {
+class _findisOdd extends State<isOdd> {
   int _input = 0;
-  int _theChar = 0;
-  List<String> characters = [];
+  int _oddChar = 0;
   final numberEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,22 +39,22 @@ class _findMinChar extends State<minChar> {
                     setState(() {
                       List<String> characters = List<String>.generate(
                           text.length, (index) => text[index]);
-                      int _min = int.parse(characters[0]);
-                      characters.forEach((e) {
-                        if (int.parse(e) < _min) {
-                          _min = int.parse(e);
+                      for (int i = 0; i < characters.length; i++) {
+                        if (int.parse(characters[i]) % 2 == 0) {
+                          _oddChar = 1;
+                          break;
+                        } else {
+                          _oddChar = 0;
                         }
-                      });
-                      _theChar = _min;
+                      }
+                      /*  characters.forEach((e) {
+                        if (int.parse(e) % 2 == 0) {
+                          print(e);
+                        }
+                      }); */
                       _input = int.parse(text);
                       numberEditingController.clear();
                     });
-
-                    /*  int _findChar() {
-                      setState(() {
-                      });
-                      return _theChar;
-                    } */
                   },
                   /* onChanged: (text) {
                     if (text.length == 0) {
@@ -70,7 +70,7 @@ class _findMinChar extends State<minChar> {
                 ),
               ),
               Text(
-                'Chữ số nhỏ nhất của số nguyên dương $_input là $_theChar',
+                'Số nguyên dương $_input ${_oddChar == 1 ? 'có số chẵn' : 'tất cả chữ số là số lẻ'}',
                 style: const TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
