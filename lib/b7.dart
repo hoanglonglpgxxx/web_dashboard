@@ -25,7 +25,7 @@ class _findisOdd extends State<isOdd> {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('Find min character'),
+              Text('Find odd character'),
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
