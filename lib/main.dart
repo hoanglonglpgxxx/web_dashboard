@@ -48,11 +48,13 @@ import 'b4.dart';
 import 'b5.dart';
 import 'b6.dart';
 import 'b7.dart';
+import 'stream_async_await.dart';
+import 'test_lib.dart';
 
 void main() {
   /* runApp(MyApp2(
           name: 'asd', age: 20) //send argu/params to this by using constructor
       ); */
-  runApp(const isOdd() //send argu/params to this by using constructor
+  runApp(testLib() //send argu/params to this by using constructor
       );
 }
