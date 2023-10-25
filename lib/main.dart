@@ -51,10 +51,57 @@ import 'b7.dart';
 import 'stream_async_await.dart';
 import 'test_lib.dart';
 
-void main() {
+/* void main() {
   /* runApp(MyApp2(
           name: 'asd', age: 20) //send argu/params to this by using constructor
       ); */
   runApp(testLib() //send argu/params to this by using constructor
       );
+} */
+
+import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => MyAppState(),
+      child: MaterialApp(
+        title: 'Namer App',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        ),
+        home: MyHomePage(),
+      ),
+    );
+  }
+}
+
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('A random text:'),
+          Text(appState.current.asLowerCase),
+        ],
+      ),
+    );
+  }
 }
