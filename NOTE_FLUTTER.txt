@@ -27,5 +27,11 @@ Flutter Courses
 https://seenickcode.com/courses/flutter-basics
 https://seenickcode.com/
 https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/?ranMID=39197&ranEAID=jU79Zysihs4&ranSiteID=jU79Zysihs4-s07IkQQ6lboWDTp6rZrs0w&LSNPUBID=jU79Zysihs4&utm_source=aff-campaign&utm_medium=udemyads
+https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
+https://www.youtube.com/playlist?list=PLV2Iw811jLpWdAHToUqTuWYhYbjVfwS80
+https://hackr.io/tutorials/learn-flutter?q=Flutter
+https://www.udemy.com/course/master-flutter-learn-dart-flutter-by-developing-20-apps/?LSNPUBID=jU79Zysihs4&ranEAID=jU79Zysihs4&ranMID=39197&ranSiteID=jU79Zysihs4-Jd1IUbMm72iLB.AsP_HMzg&utm_medium=udemyads&utm_source=aff-campaign
 
+
+what is GlobalKey
 https://api.flutter.dev/flutter/widgets/GlobalKey-class.html
