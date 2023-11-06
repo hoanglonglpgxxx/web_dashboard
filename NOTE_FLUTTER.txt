@@ -18,5 +18,13 @@ The user rotates their phone from portrait mode to landscape mode, or back
 Some widget next to MyHomePage grows in size, making MyHomePage's constraints smaller
 And so on
 
+Loại vừa làm
+https://codelabs.developers.google.com/codelabs/flutter-codelab-first#7
+Advanced type của loại vừa làm
+https://dartpad.dev/?id=e7076b40fb17a0fa899f9f7a154a02e8
+
+Flutter Courses
+https://seenickcode.com/courses/flutter-basics
+https://seenickcode.com/
 
 https://api.flutter.dev/flutter/widgets/GlobalKey-class.html
