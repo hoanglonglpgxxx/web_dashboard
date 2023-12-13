@@ -37,3 +37,7 @@ class fLession extends StatelessWidget {
   }
 }
 //container aka "div" of flutter
+//fundamentals of Layout in flutter
+//! child is widget inside container
+//children: array of containers or sthing else?
+//statelesswidget: no keep track of any values

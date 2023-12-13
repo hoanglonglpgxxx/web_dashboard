@@ -35,4 +35,4 @@ https://www.udemy.com/course/master-flutter-learn-dart-flutter-by-developing-20-
 
 what is GlobalKey
 https://api.flutter.dev/flutter/widgets/GlobalKey-class.html
-key openai: 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
+key openai: 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
