@@ -3,37 +3,26 @@ import 'package:flutter/material.dart';
 class fLession extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Test'),
-          ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.deepOrange[200],
-                ),
-                child: Text('One'),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.red[200],
-                ),
-                child: Text('Two'),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.green[200],
-                ),
-                child: Text('Three'),
-              ),
-            ],
-          ),
+    return Scaffold(
+        appBar: AppBar(title: Text("Hello, World!")),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _section("One!", Colors.red),
+            _section("Two!", Colors.green),
+            _section("Three!", Colors.blue),
+          ],
         ));
+  }
+
+  Widget _section(String title, Color color) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+      ),
+      child: Text(title),
+    );
   }
 }
 //container aka "div" of flutter
