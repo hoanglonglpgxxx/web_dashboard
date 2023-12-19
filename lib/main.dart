@@ -8,7 +8,8 @@ import 'stream_async_await.dart';
 import 'test_lib.dart';
 import 'firstApp.dart';
 import 'seenickBasic/l1.dart';
-
+import 'seenickBasic/models/location.dart';
+import 'seenickBasic/mocks/mock_location.dart';
 /* void main() {
   /* runApp(MyApp2(
           name: 'asd', age: 20) //send argu/params to this by using constructor
@@ -19,5 +20,7 @@ import 'seenickBasic/l1.dart';
 
 void main() {
   // runApp(MyApp());
-  runApp(MaterialApp(home: fLession()));
+  final Location mockLocation = MockLocation.FetchAny();
+
+  runApp(MaterialApp(home: fLession(mockLocation)));
 }
